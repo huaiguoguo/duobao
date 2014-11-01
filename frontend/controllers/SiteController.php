@@ -85,10 +85,9 @@ class SiteController extends FrontendController
         $app = Yii::$app->request->get('appver');
         $sign = Yii::$app->request->get('sign');
         $token = Yii::$app->request->get('token');
-        exit;
         $data = ['success'=>true,'msg'=>'hello world','data'=>['a','b','c']];
-        echo DiyStringFunction::encode($data);
-      //  return $this->render('index');
+       // echo DiyStringFunction::encode($data);
+       return $this->render('index');
     }
 
 
