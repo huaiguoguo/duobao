@@ -1,0 +1,54 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+ol,ul,li{list-style-type:none; }
+img{border:0px; vertical-align:middle;}
+form {margin:0px;padding:0px;}
+.clear { height:0px; clear: both; overflow:hidden; }
+.clear10 { height:10px; clear: both; overflow:hidden; }
+.wei { margin-bottom:0px !important; border-bottom:none !important; }
+.red { color:#fe4028 !important;}
+a.red:hover , a:hover .red { color:#000 !important;}
+.blue { color:#008bd8 !important;}
+a.blue:hover , a:hover .blue { color:#000 !important;}
+.fl { float:left;}
+.fr { float:right;}
+input{ font-family:"Microsoft YaHei";}
+
+body {
+    font-size: 12px;
+    line-height: 22px;
+    color: #666;
+	background: url(../images/login/bg.png) center top no-repeat #01458e;
+	font-family:"Microsoft YaHei";
+}
+a { text-decoration: none; color: #666;}
+a:hover { text-decoration: none; color:#008bd8;}
+
+
+.login_main { width:640px; margin-top:137px; margin-right:auto; margin-left:auto; margin-bottom:0px;}
+.login_logo {}
+.login_box { background:url(../images/login/loginbox.png) center bottom no-repeat; padding:40px 40px 50px 40px;}
+.login_box_l { float:left; width:317px; padding-right:44px; border-right:1px #999 dashed; font-size:16px; color:#777;}
+.login_box_r { float:right; width:172px; font-size:16px; color:#777777; line-height:28px; padding-top:15px; }
+
+.login_box_l ul li { padding:10px 0px;}
+.login_box_l ul li .input{ height:42px; width:297px; padding:0px 10px; line-height:42px; font-size:16px; border:none; }
+.login_box_l ul li .t1 ,.login_box_l ul li .t2{ display:inline-block; height:38px; width:148px; text-align:center; line-height:38px; font-size:16px; background:#ffffff; border:2px #fafafa solid; }
+.login_box_l ul li .t2{ margin-left:13px; }
+.login_box_l ul li .btn{ display:block; height:46px; width:155px; text-align:center; line-height:46px; font-size:18px; color:#fff; cursor:pointer; background:#00325c; border:none; }
+.login_box_l ul li .btn:hover{ color:#fff; background:#e64043; }
+
+.pass_box_l { padding-left:117px;}
+.pass_box_l ul li { padding:10px 0px;}
+.pass_box_l ul li .input{ height:42px; width:297px; padding:0px 10px; line-height:42px; font-size:16px; border:none; }
+.pass_box_l ul li .btn{ display:block; height:46px; width:155px; text-align:center; line-height:46px; font-size:18px; color:#fff; cursor:pointer; background:#00325c; border:none; }
+.pass_box_l ul li .btn:hover{ color:#fff; background:#e64043; }
+
+.pass_box { height:82px; width:400px; margin:0px auto; background:url(../images/login/b3.png) center 12px no-repeat;}
+.pass_box ul li{ float:left; width:100px; text-align:center; color:#999; line-height:30px; font-size:14px;}
+.pass_box ul li.t2{ padding:0px 50px;}
+.pass_box ul li i{ width:28px; height:28px; font-size:18px; color:#666; font-style:normal; line-height:28px; text-align:center; display:block; margin:0px auto; background:url(../images/login/b1.png) no-repeat;}
+.pass_box ul li.hover { color:#666;}
+.pass_box ul li.hover i{ background:url(../images/login/b2.png) no-repeat; color:#fff;}

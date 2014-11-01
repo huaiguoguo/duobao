@@ -1,10 +1,9 @@
 <?php
 namespace frontend\controllers;
 
+use common\extensions\MyController;
 use Yii;
 use common\models\LoginForm;
-use common\helper\DiyStringFunction;
-use yii\helpers\VarDumper;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
 use frontend\models\SignupForm;
@@ -14,12 +13,11 @@ use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-use frontend\extension\FrontendController;
 
 /**
  * Site controller
  */
-class SiteController extends FrontendController
+class SiteController extends MyController
 {
     /**
      * @inheritdoc
@@ -29,21 +27,16 @@ class SiteController extends FrontendController
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                // 'denyCallback' => function ($rule, $action) {
-                //     var_dump($action);
-
-                //     //echo 'You are not allowed to access this page';
-                // },
                 'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['login','signup'],
-                        'allow' => true,
+                        'actions' => ['signup'],
+                        'allow' => false,
                         'roles' => ['?'],
                     ],
                     [
                         'actions' => ['logout'],
-                        'allow' => true,
+                        'allow' => false,
                         'roles' => ['@'],
                     ],
                 ],
@@ -73,29 +66,16 @@ class SiteController extends FrontendController
         ];
     }
 
-
-
-
     public function actionIndex()
     {
-        $cmd = Yii::$app->request->get('cmd');
-        $param  = Yii::$app->request->get('param');
-        $client = Yii::$app->request->get('client');
-        $deviceinfo = Yii::$app->request->get('deviceinfo');
-        $app = Yii::$app->request->get('appver');
-        $sign = Yii::$app->request->get('sign');
-        $token = Yii::$app->request->get('token');
-        $data = ['success'=>true,'msg'=>'hello world','data'=>['a','b','c']];
-       // echo DiyStringFunction::encode($data);
-       return $this->render('index');
+        return $this->render('index');
     }
-
-
 
     public function actionLogin()
     {
 
-        if (!Yii::$app->user->isGuest) {
+        $this->layout = 'login';
+        if (!\Yii::$app->user->isGuest) {
             return $this->goHome();
         }
 
@@ -112,8 +92,29 @@ class SiteController extends FrontendController
     public function actionLogout()
     {
         Yii::$app->user->logout();
+
         return $this->goHome();
     }
+
+
+    public function actionReg()
+    {
+        $this->layout = 'login';
+        if (!\Yii::$app->user->isGuest) {
+            return $this->goHome();
+        }
+
+        $model = new LoginForm();
+        if ($model->load(Yii::$app->request->post()) && $model->login()) {
+            return $this->goBack();
+        } else {
+            return $this->render('signup', [
+                'model' => $model,
+            ]);
+        }
+    }
+
+
 
 
     public function actionContact()

@@ -12,10 +12,16 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'modules' => [],
+   // 'defaultRoute'=>'default',
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
+        ],
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+          //  'defaultRoute' => 'DefaultController',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,

@@ -1,9 +1,9 @@
 <?php
 use yii\helpers\Html;
-use yii\bootstrap\ActiveForm;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
-/* @var $form yii\bootstrap\ActiveForm */
+/* @var $form yii\widgets\ActiveForm */
 /* @var $model \frontend\models\ResetPasswordForm */
 
 $this->title = 'Reset password';

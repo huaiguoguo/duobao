@@ -16,10 +16,13 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
         ],
-        'urlManager'=>[
-                'enablePrettyUrl' => true,
-                'showScriptName' => false
-            ],
+        'urlManager'=> [
+                    'enablePrettyUrl' => true,
+                    'showScriptName' => false,
+                     //'suffix' => '.html',//后缀
+                    // 'rules' => $urls,
+
+        ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
